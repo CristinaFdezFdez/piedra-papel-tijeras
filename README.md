@@ -10,9 +10,9 @@ Esta es una aplicación que simula el clásico juego de “piedra, papel y tijer
 
 ## Capturas de pantalla
 
-![Captura de pantalla 2024-05-28 101242](https://github.com/CristinaFdezFdez/piedra-papel-tijeras/assets/155740893/056b655a-b0e9-44d8-9bc4-bdfb2755a806)
-![Captura de pantalla 2024-05-28 101235](https://github.com/CristinaFdezFdez/piedra-papel-tijeras/assets/155740893/d6e662c5-03fa-442e-b132-f8784f4da21a)
-![Captura de pantalla 2024-05-28 101250](https://github.com/CristinaFdezFdez/piedra-papel-tijeras/assets/155740893/e9d6300d-3e0d-4312-82e2-b349a9502cc2)
+![Captura de pantalla 2024-07-29 173047](https://github.com/user-attachments/assets/cdf3f1d4-5194-440e-8b99-c7d5c3241e89)
+
+![Captura de pantalla 2024-07-29 173104](https://github.com/user-attachments/assets/e3a3aedd-9697-49ef-8ea2-9246c62f1f3a)
 
 ## Tecnologías utilizadas
 
