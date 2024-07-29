@@ -15,4 +15,4 @@ function compararOpciones(opcionUsuario, opcionComputadora) {
     } else {
         return 'Has perdido';
     }
-};
+}

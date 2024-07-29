@@ -1,49 +1,39 @@
 "use strict";
 
 // Capturamos los elementos del HTML.
-const piedra = document.getElementById("piedra");
-const papel = document.getElementById("papel");
-const tijera = document.getElementById("tijera");
-const lagarto = document.getElementById("lagarto");
-const spock = document.getElementById("spock");
+const botones = {
+    piedra: document.getElementById("piedra"),
+    papel: document.getElementById("papel"),
+    tijera: document.getElementById("tijera"),
+    lagarto: document.getElementById("lagarto"),
+    spock: document.getElementById("spock")
+};
 const salida = document.getElementById("salida");
 
-// Agregamos un event listener para cuando el usuario elige 'piedra'.
-piedra.addEventListener('click', function() {
-    const opcionUsuario = 'piedra';
+// Función que maneja el clic en cualquier botón.
+function manejarClick(opcionUsuario) {
     const opcionComputadora = generarOpcionAleatoria();
     const resultadoJuego = compararOpciones(opcionUsuario, opcionComputadora);
     salida.innerHTML = `Has elegido ${opcionUsuario}, tu oponente ha elegido ${opcionComputadora}. ${resultadoJuego}.`;
+
+    // Limpiar animaciones anteriores
+    salida.classList.remove('win-animation', 'loss-animation');
+    
+    // Añadir animación según el resultado
+    if (resultadoJuego === '¡Has ganado!') {
+        salida.classList.add('win-animation');
+    } else if (resultadoJuego === 'Has perdido') {
+        salida.classList.add('loss-animation');
+    }
+}
+
+// Agregamos un event listener para cada botón.
+Object.keys(botones).forEach(opcion => {
+    botones[opcion].addEventListener('click', () => manejarClick(opcion));
 });
 
-// Event listener para 'papel'.
-papel.addEventListener('click', function() {
-    const opcionUsuario = 'papel';
-    const opcionComputadora = generarOpcionAleatoria();
-    const resultadoJuego = compararOpciones(opcionUsuario, opcionComputadora);
-    salida.innerHTML = `Has elegido ${opcionUsuario}, tu oponente ha elegido ${opcionComputadora}. ${resultadoJuego}.`;
-});
-
-// Event listener para 'tijera'.
-tijera.addEventListener('click', function() {
-    const opcionUsuario = 'tijera';
-    const opcionComputadora = generarOpcionAleatoria();
-    const resultadoJuego = compararOpciones(opcionUsuario, opcionComputadora);
-    salida.innerHTML = `Has elegido ${opcionUsuario}, tu oponente ha elegido ${opcionComputadora}. ${resultadoJuego}.`;
-});
-
-// Event listener para 'lagarto'.
-lagarto.addEventListener('click', function() {
-    const opcionUsuario = 'lagarto';
-    const opcionComputadora = generarOpcionAleatoria();
-    const resultadoJuego = compararOpciones(opcionUsuario, opcionComputadora);
-    salida.innerHTML = `Has elegido ${opcionUsuario}, tu oponente ha elegido ${opcionComputadora}. ${resultadoJuego}.`;
-});
-
-// Event listener para 'spock'.
-spock.addEventListener('click', function() {
-    const opcionUsuario = 'spock';
-    const opcionComputadora = generarOpcionAleatoria();
-    const resultadoJuego = compararOpciones(opcionUsuario, opcionComputadora);
-    salida.innerHTML = `Has elegido ${opcionUsuario}, tu oponente ha elegido ${opcionComputadora}. ${resultadoJuego}.`;
+// Función para iniciar el juego al hacer clic en el botón de inicio.
+document.getElementById('start-game').addEventListener('click', () => {
+    document.getElementById('welcome').style.display = 'none';
+    document.getElementById('game').style.display = 'flex';
 });

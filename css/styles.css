@@ -1,100 +1,219 @@
-body {
-  background: #f8f0f4;
-  font-family: "Arial", sans-serif;
-  font-size: 16px;
-  color: #333;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Incluye el padding y border en el tamaño total del elemento */
 }
 
-#container {
-  margin: 0 auto;
-  max-width: 1000px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+body {
+  background: #fff3e0; /* Suave naranja claro */
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; /* Evitar scroll horizontal */
+  min-height: 100vh; /* Asegurar que el body ocupe al menos la altura completa de la ventana */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Welcome Screen Styles */
+#welcome {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../img/big.webp) no-repeat center center; /* Centra la imagen y evita repetirla */
+  background-size: cover; /* Ajusta la imagen para cubrir toda el área disponible */
+  color: black;
+  text-align: center;
+  transition: opacity 1s ease;
+  z-index: 10;
+}
+
+
+.welcome-content {
+  background: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
+  max-width: 600px;
+}
+
+#welcome h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra negra con opacidad */
+  font-size: 2.5em;
+  margin: 0;
+}
+
+#welcome p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra negra con opacidad */
+  font-size: 1.2em;
+}
+
+#welcome button {
+  background: #e65100; /* Naranja más oscuro */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#welcome button:hover {
+  background: #bf360c; /* Naranja más intenso */
+  transform: scale(1.05);
+}
+
+/* Game Screen Styles */
+#game {
+  display: none; /* Ocultamos el juego por defecto */
+  width: 100vw;
+  height: calc(100vh - 80px); /* Ajustamos la altura para que el footer quede al final */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  flex: 1;
 }
 
 #header {
-  background: #ffbfd1;
+  background: #ff5722; /* Naranja medio */
+  color: #ffffff;
   text-align: center;
   padding: 20px;
+  width: 100%;
+  border-bottom: 4px solid #e64a19; /* Línea decorativa en naranja más oscuro */
 }
 
 #header h1 {
-  font-size: 28px;
+  font-size: 2.5em;
   margin: 0;
-  color: #333;
 }
 
-#header h2 {
-  font-size: 24px;
-  margin: 0;
-  color: #555;
-}
-
+/* Content Styles */
 #content {
-  background: #fff;
-  clear: both;
+  flex: 1; /* Permite que el contenido ocupe el espacio disponible */
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-#content h2 {
-  color: #333;
-  font-size: 24px;
-  margin: 0 0 20px;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  padding: 12px;
-  list-style: none;
-}
-
-a {
-  color: #ff66a3;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: #ff3377;
-}
-
-table {
-  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  box-sizing: border-box;
 }
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
 }
 
+.game-button {
+  background: #ffffff;
+  border: 2px solid #ff5722; /* Borde en naranja medio */
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 120px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-button img {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.game-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#salida {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Footer Styles */
 #footer {
-  color: #fff;
-  background: #ffbfd1;
+  background:#e64a19;
+  color: #ffffff;
   text-align: center;
   padding: 20px;
-  margin-top: 20px;
-  border-radius: 0 0 10px 10px;
+  width: 100%;
+  position: relative; /* Cambiar a relative para el footer al final */
+  bottom: 0;
+  border-radius: 12px 12px 0 0;
+  box-sizing: border-box;
 }
 
-input {
-  margin: 6px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s;
+/* Animations */
+.win-animation {
+  animation: winAnimation 2s ease-out;
 }
 
-input:focus {
-  border-color: #ff66a3;
+.loss-animation {
+  animation: lossAnimation 2s ease-out;
+}
+
+@keyframes winAnimation {
+  0% { transform: scale(0.9); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes lossAnimation {
+  0% { transform: rotate(0deg); opacity: 0; }
+  50% { transform: rotate(360deg); opacity: 1; }
+  100% { transform: rotate(0deg); opacity: 1; }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  #header h1 {
+    font-size: 2em;
+  }
+
+  .game-button img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+
+  #welcome h1 {
+    font-size: 1.8em;
+  }
+
+  #welcome p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 400px) {
+  #header h1 {
+    font-size: 1.5em;
+  }
+
+  .game-button img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  #welcome h1 {
+    font-size: 1.5em;
+  }
+
+  #welcome p {
+    font-size: 0.9em;
+  }
 }

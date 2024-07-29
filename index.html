@@ -1,40 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego</title>
-    <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="./img/istockphoto-1269211670-612x612.jpg">
-    <script defer type="text/javascript" src="./js/compararOpciones.js"></script>
-    <script defer type="text/javascript" src="./js/generarOpcionAleatoria.js"></script>
-    <script defer type="text/javascript" src="./js/script.js"></script>
+    <title>Juego de Piedra, Papel, Tijera, Lagarto, Spock</title>
+    <link rel="shortcut icon" href="img/istockphoto-1269211670-612x612.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-
-
-
-    <div id="container">
-        <div id="header">
-            <h1>
-                Juego Piedra, Papel, Tijeras
-            </h1>
-        </div>
-        <div id="content">
-
-            <button id="piedra"><img src="./img/piedra.png"></button>
-            <button id="papel"><img src="./img/papel.png"></button>
-            <button id="tijera"><img src="./img/tijera.png"></button>
-            <button id="lagarto"><img src="./img/lagarto.png"></button>
-	        <button id="spock"><img src="./img/spock.png"></button>
-            <br>
-            <p id="salida"></p>
-        </div>
-
-        <div id="footer">
-            © Cristina Fernández ☺
+    <!-- Pantalla de bienvenida -->
+    <div id="welcome">
+        <div class="welcome-content">
+            <h1>Bienvenido al Juego</h1>
+            <p>Piedra, Papel, Tijera, Lagarto, Spock</p>
+            <button id="start-game">Empezar Juego</button>
         </div>
     </div>
-</body>
 
+
+
+    <!-- Pantalla del juego -->
+    <div id="game" class="hidden">
+        <div id="header">
+            <h1>Piedra, Papel, Tijera, Lagarto, Spock... ¡1, 2 y 3!</h1>
+        </div>
+        <div id="content">
+            <div class="botones">
+                <div id="piedra" class="game-button"><img src="img/piedra.png" alt="Piedra"></div>
+                <div id="papel" class="game-button"><img src="img/papel.png" alt="Papel"></div>
+                <div id="tijera" class="game-button"><img src="img/tijera.png" alt="Tijera"></div>
+                <div id="lagarto" class="game-button"><img src="img/lagarto.png" alt="Lagarto"></div>
+                <div id="spock" class="game-button"><img src="img/spock.png" alt="Spock"></div>
+            </div>
+            <div id="salida"></div>
+        </div>
+        <div id="footer">
+            <p>&copy; 2024 Cristina Fdez. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <script src="js/generarOpcionAleatoria.js"></script>
+    <script src="js/compararOpciones.js"></script>
+    <script src="js/script.js"></script>
+</body>
 </html>
